@@ -9,12 +9,8 @@ $(document).ready(function () {
         burger = document.querySelector('.burger');
 
     burger.addEventListener('click', function () {
-        if (nav.classList.contains('hide')) {
-            nav.classList.remove('hide');
-        } else  {
-            nav.classList.add('hide');
-        }
         nav.classList.toggle('show');
         burger.classList.toggle('activeBurger');
+        document.body.classList.toggle('lock');
     });
 });

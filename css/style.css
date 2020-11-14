@@ -18,6 +18,10 @@ a {
 input, button, textarea, select {
   font: inherit; }
 
+  body {
+    overflow-x: hidden;
+  }
+
 .container {
   max-width: 1140px;
   margin: 0 auto; }
@@ -70,6 +74,10 @@ button {
 
 .gradient_orange {
   background-image: linear-gradient(to top, rgba(254, 185, 96, 0.6) 0%, rgba(0, 0, 0, 0.01) 100%); }
+
+  .lock {
+    overflow: hidden;
+  }
 
 .btn {
   width: 180px;
@@ -160,7 +168,7 @@ button {
   .main-btn {
     margin-bottom: 83px; }
   .main-features {
-    width: 743px;
+    width: 100%;
     display: flex;
     justify-content: space-between; }
     .main-features-card {
@@ -234,7 +242,7 @@ button {
   .focus-title {
     margin-bottom: 80px; }
   .focus-cards {
-    width: 1140px;
+    width: 100%;
     display: flex;
     justify-content: space-between; }
   .focus-card {
@@ -503,7 +511,7 @@ button {
   .test-title {
     margin-bottom: 80px; }
   .test-slider {
-    width: 1110px;
+    width: 90%;
     overflow: hidden; }
     .test-slider-dots {
       width: 100%;
@@ -838,7 +846,6 @@ button {
     left: 0;
     bottom: 0; }
   .focus-cards {
-    width: 800px;
     flex-wrap: wrap; }
   .focus-card {
     margin-bottom: 20px;
@@ -895,9 +902,34 @@ button {
     .steps-column-item:last-child {
       margin-bottom: 0; } }
 
-@media all and (max-device-width: 800px) {
+@media all and (max-width: 800px) {
   .container {
     width: 425px; }
+  .header-nav {
+    width: 100%;
+    transition: all ease 0.5s;
+    position: fixed;
+    top: -110vh;
+    left: 0;
+    padding-top: 15px;
+    background-color: #313131;
+    opacity: 1;
+    height: 100vh;
+  }
+  .header-nav .header-list {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  .header-nav .header-list li {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+  .header__link {color: #ffffff; font-size: 14px;}
   .main__title {
     font-size: 40px;
     line-height: 60px; }
@@ -916,7 +948,6 @@ button {
   .about__title {
     width: 410px; }
   .focus-cards {
-    width: 425px;
     justify-content: center; }
   .focus-card {
     flex-basis: 70%; }
@@ -979,37 +1010,30 @@ button {
     padding-right: 5px;
     padding-left: 5px;
     flex-direction: row; }
-  @keyframes showBlock {
-    from {
-      opacity: 0; }
-    to {
-      opacity: 1; } }
-  @keyframes hideBlock {
-    from {
-      opacity: 1; }
-    to {
-      opacity: 0; } }
   .show {
+    height: 100vh;
     opacity: 1;
     display: block;
-    position: absolute;
+    position: fixed;
     width: 100%;
     left: 0;
     top: 0;
+    transition: all ease 0.5s;
     animation: showBlock 0.5s; }
     .show .header-list {
       background-color: #313131;
-      padding-top: 5px;
+      padding-top: 15px;
       padding-bottom: 5px;
+      height: 100%;
       width: 100%;
       flex-direction: column;
-      align-items: center; }
+      align-items: center;
+      justify-content: flex-start; }
+    .show .header-list li {
+      margin-bottom: 15px;
+    }  
     .show .header__link {
       color: #ffffff; }
-  .hide {
-    display: none;
-    opacity: 0;
-    animation: hideBlock 0.5s; }
   .burger {
     cursor: pointer;
     width: 25px;
@@ -1037,9 +1061,17 @@ button {
     .activeBurger::after {
       transition: transform ease 0.5s;
       top: 0;
-      transform: rotate(90deg); } }
+      transform: rotate(90deg); } 
+  .subscribe-form label {
+    height: 100%;
+    display: flex;
+  }
+}
 
-@media all and (max-device-width: 424px) {
+@media all and (max-width: 424px) {
+  .test-slide-text {
+    padding-right: 15px;
+  }
   .container {
     width: 310px; }
   .about-text {
@@ -1072,6 +1104,7 @@ button {
   .subscribe {
     text-align: center; }
     .subscribe__input {
+      padding-left: 5px;
       width: 160px; }
   .footer-form-inputs {
     width: 310px; }
